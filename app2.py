@@ -97,28 +97,22 @@ def pattern_matching():
 
         time.sleep(1)
 
-        # # Check if the 'q' key is pressed to exit the program
-        # if keyboard.is_pressed('q'):  # if key 'q' is pressed 
-        #     break
 
 def keyboard_press(key):
-    # def on_press(key):
-    if key == KeyCode.from_char('1'):
+    if key == KeyCode.from_char('p'):
         print('Exit')
         os._exit(0)
     
-    # with keyboard.Listener(on_press=on_press) as listener:
-    #     listener.join()
 
 def main():
     threading.Thread(target=pattern_matching).start()
-    # threading.Thread(target=keyboard_press).start()
 
     with keyboard.Listener(on_press=keyboard_press) as listener:
         listener.join()
 
     # Release the capture and close the windows
-    cv2.destroyAllWindows()
+    # cv2.destroyAllWindows()
+
 
 if __name__ == "__main__":
     main()
